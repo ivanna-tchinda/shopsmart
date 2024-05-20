@@ -5,7 +5,6 @@ const connection = mysql.createConnection({
     host: "127.0.0.1",
     user: "root",
     password: "root",
-    database: "shopsmart",
 })
  
 class DbService{
@@ -13,10 +12,10 @@ class DbService{
         return instance ? instance : new DbService();
     }
 
-    async getAllData() {
+    async getAllData(city) {
         try {
             const response = await new Promise((resolve, reject) => {
-                const query = "SELECT * FROM table_paris;";
+                const query = "SELECT * FROM table_" + city + ";";
 
                 connection.query(query, (err, results) => {
                     if (err) reject(new Error(err.message));
@@ -38,17 +37,10 @@ connection.connect(function (err) {
     }
     else {
         console.log(`Database Connected`)
-        connection.query(`SHOW DATABASES`)
-        connection.query(`use shopsmart`)
-        connection.query(`select * from table_paris`,
+        connection.query(`use shopsmart`,
         function (err, result) {
             if (err)
                 console.log(`Error executing the query - ${err}`)
-            else
-            {
-                console.log("Result: ", result)
-                exports.table = result;
-            }
         })
     }
 })

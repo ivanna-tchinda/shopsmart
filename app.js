@@ -5,10 +5,17 @@ const app = express();
 
 app.use(express.static('public'));
 app.use(express.json());
-app.get('/getAll', (request, response) => {
+app.get('/getAllParis', (request, response) => {
     const db = table.getDbServiceInstance();
-    // console.log("getAll")
-    const result = db.getAllData();
+    const result = db.getAllData("paris");
+    result
+    .then(data => response.json({data : data}))
+    .catch(err => console.log(err));
+})
+
+app.get('/getAllToulon', (request, response) => {
+    const db = table.getDbServiceInstance();
+    const result = db.getAllData("toulon");
     result
     .then(data => response.json({data : data}))
     .catch(err => console.log(err));

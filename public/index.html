@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Shop Smart</title>
 </head>
 <body>
     <h1>Shop Smart</h1>
     <h4>Quel produit recherchez vous?</h3>
-    <input id="input-search" placeholder="Produit"/>
-    <input id="city-search" placeholder="Ville"/>
-    <button id="enter-btn">enter</button>
+    <form autocomplete="off">
+        <input id="input-search" placeholder="Produit"/>
+        <input id="city-search" placeholder="Ville"/>
+        <button id="enter-btn">enter</button>
+    </form>
+    <li id="serach-elements"></li>
     <li></li>
     
     <script type="module" src="script.js"></script>
