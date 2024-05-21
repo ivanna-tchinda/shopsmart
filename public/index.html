@@ -4,19 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>Shop Smart</title>
 </head>
 <body>
-    <h1>Shop Smart</h1>
-    <h4>Quel produit recherchez vous?</h3>
-    <form autocomplete="off">
-        <input id="input-search" placeholder="Produit"/>
-        <input id="city-search" placeholder="Ville"/>
-        <button id="enter-btn">enter</button>
-    </form>
-    <li id="serach-elements"></li>
-    <li></li>
-    
+
+    <div id="navbar">
+        <h1><a href="#home">Chipest</a></h1>
+    </div>
+    <div id="home">
+        <div id="two">
+            <h2 class="title" id="column">Faites des économies sur vos courses</h2>
+            <p class="description-home" id="column">Comparez les prix de vos produits préférés dans les magasins autour de vous.</p>
+            <button class="btn-home" id="column"><a href="#search-page">Comparer</a></button>
+            <div class="void">_</div>
+        </div>
+        <img id="two" src="assets/shopping-cart.png"/>
+    </div>
+    <div id="search-page">
+        <h4 id="title-search">Quel produit recherchez vous?</h3>
+        <form autocomplete="off">
+            <div id="input1">
+                <img id="loupe-img" src="assets/loupe.png"/>
+                <input id="input-search" placeholder="Produit"/>
+            </div>
+            <div id="input2">
+                <img id="loupe-img2" src="assets/loupe.png"/>
+                <input id="city-search" placeholder="Ville"/>
+            </div>
+            <button id="enter-btn">enter</button>
+        </form>
+        <li id="search-elements"></li>
+    </div>
     <script type="module" src="script.js"></script>
 </body>
 </html>

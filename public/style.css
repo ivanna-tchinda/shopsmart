@@ -1,0 +1,130 @@
+ 
+li{
+    list-style-type: none;
+}
+
+body{
+    font-family: "Rubik";
+}
+
+#navbar {
+    overflow: hidden;
+    float: left;
+    padding: 14px;
+    text-decoration: none;
+    width: 90%;
+    display: inline-flex;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 60px;
+  }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/*------------------HOME PAGE--------------------*/
+
+#home{
+    height: 100vh;
+    width: 100%;
+}
+
+
+#two{
+    display: inline-block;
+}
+
+h2{
+    font-size: 60px;
+    color: #00BF63;
+    margin-top: 10%;
+    text-align: center;
+    width: 60%;
+    margin-left: 20%;
+}
+
+#input-search, #city-search{
+    width: 150px;
+}
+
+h1{
+    font-weight: 400;
+    font-size: 45px;
+}
+
+img{
+    position: relative;
+    width: 28%;
+    margin-top: 10%;
+}
+
+.description-home{
+    position: relative;
+    width: 60%;
+    margin-left: 21%;
+    font-size: 25px;
+}
+
+.btn-home{
+    margin-left: 42%;
+    background-color: #00BF63;
+    width: 150px;
+    height: 40px;
+    border-radius: 12px;
+    border-style: none;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10%;
+}
+
+.void{
+    color: white;
+}
+
+#search-page{
+    height: 80vh;
+}
+
+#title-search{
+    font-weight: 400;
+    font-size: 25px;
+    margin-left: 10%;
+}
+
+
+/*------------------SEARCH PAGE--------------------*/
+
+
+#input-search, #city-search{
+    width: 21%;
+    height: 35px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: black;
+    font-family: "Rubik";
+}
+
+#input-search{
+    margin-left: 10%;
+    margin-right: 32px;
+}
+
+#loupe-img, #loupe-img2{
+    display: flex;
+    width: 30px;
+    height: 30px;
+}
+
+#input1 #input2{
+    display: inline-block;
+}
+
+#input1, #input2{
+    width: 40%;
+}

@@ -9,13 +9,30 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => getData(data['data']));
 });
 
+window.onscroll = function() {scrollFunction()};
+
+var navbar = document.getElementById("navbar");
+
+var sticky = navbar.offsetTop;
+
+function scrollFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
 
 function getData(data) {
     data.forEach(function ({product}){
         products_elts.push(product)
     })
     products_elts.sort();
-    console.log(products_elts);
+}
+
+function displayNames(value) {
+    elt_srch.value = value;
+    removeElements();
 }
 
 elt_srch.addEventListener("keyup", (e) => {
@@ -28,27 +45,25 @@ elt_srch.addEventListener("keyup", (e) => {
         i.toLowerCase().startsWith(elt_srch.value.toLowerCase()) &&
         products_elts.value != ""
       ) {
+        console.log(i);
         //create li element
         let listItem = document.createElement("li");
         //One common class name
         listItem.classList.add("list-items");
         listItem.style.cursor = "pointer";
-        listItem.setAttribute("onclick", "displayNames('" + i + "')");
+        listItem.addEventListener('click', function() {
+            displayNames(i);
+        });
         //Display matched part in bold
         let word = "<b>" + i.substr(0, elt_srch.value.length) + "</b>";
         word += i.substr(elt_srch.value.length);
         //display the value in array
         listItem.innerHTML = word;
-        document.getElementById("serach-elements").appendChild(listItem);
+        document.getElementById("search-elements").appendChild(listItem);
       }
     }
 });
 
-function displayNames(value) {
-    console.log("display name")
-    elt_srch.value = value;
-    removeElements();
-}
 
 function removeElements() {
     //clear all the item
@@ -58,7 +73,8 @@ function removeElements() {
     });
 }
 
-btn_enter.addEventListener("click", function () {
+btn_enter.addEventListener("click", function (e) {
+    e.preventDefault()
     switch (city_srch.value) {
         case "paris":
             fetch('http://localhost:3000/getAllParis')
@@ -99,7 +115,7 @@ function loadHTMLTable(data) {
             tableHtml += `<li>Prix auchan:${price_auchan}</li>`;
             tableHtml += `<li>Prix franprix:${price_franprix}</li>`;
             tableHtml += "</tr>";
-            return;
+            // return;
         }
     });
 
