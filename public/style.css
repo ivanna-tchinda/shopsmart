@@ -81,6 +81,7 @@ img{
     font-weight: 600;
     font-size: 18px;
     margin-bottom: 10%;
+    cursor: pointer;
 }
 
 .void{
@@ -102,7 +103,7 @@ img{
 
 
 #input-search, #city-search{
-    width: 21%;
+    width: 70%;
     height: 35px;
     border-radius: 20px;
     border-width: 1px;
@@ -116,15 +117,10 @@ img{
 }
 
 #loupe-img, #loupe-img2{
-    display: flex;
     width: 30px;
     height: 30px;
 }
 
-#input1 #input2{
-    display: inline-block;
-}
-
-#input1, #input2{
-    width: 40%;
+#form{
+    display: inline-flex;
 }
