@@ -1,4 +1,5 @@
  
+
 li{
     list-style-type: none;
 }
@@ -40,7 +41,7 @@ a{
     display: inline-block;
 }
 
-h2{
+.title{
     font-size: 60px;
     color: #00BF63;
     margin-top: 10%;
@@ -53,12 +54,12 @@ h2{
     width: 150px;
 }
 
-h1{
+.logo{
     font-weight: 400;
     font-size: 45px;
 }
 
-img{
+.img-home{
     position: relative;
     width: 28%;
     margin-top: 10%;
@@ -102,25 +103,242 @@ img{
 /*------------------SEARCH PAGE--------------------*/
 
 
+#title-search{
+    top: 40px;
+    left: 140px;
+    position: relative;
+}
+
+
 #input-search, #city-search{
-    width: 70%;
-    height: 35px;
+    width: 400px;
+    height: 40px;
     border-radius: 20px;
     border-width: 1px;
     border-color: black;
     font-family: "Rubik";
+    display: flex;
+    position: relative;
+    padding: 0 15px;
+    font-size: 18px;
+}
+
+#city-search{
+    left: 380px;
 }
 
 #input-search{
     margin-left: 10%;
     margin-right: 32px;
+    left: 280px;
 }
 
 #loupe-img, #loupe-img2{
     width: 30px;
     height: 30px;
+    position: relative;
+}
+
+#loupe-img{
+    left: 290px;
+    top: 40px;
+}
+
+#loupe-img2{
+    left: 345px;
+    top: 40px;
 }
 
 #form{
     display: inline-flex;
+}
+
+#enter-btn{
+    left: 440px;
+    position: relative;
+    width: 120px;
+    height: 40px;
+    top: 35px;
+    background-color: #00BF63;
+    color: white;
+    border-radius: 40px;
+    border-style: none;
+    font-size: 18px;
+}
+
+#search-elements{
+    margin-left: 285px;
+    margin-top: 50px;
+}
+
+.one-product{
+    background-color: #D8FFEC;
+    width: 1130px;
+    height: 150px;
+    margin-top: 20px;
+    border-radius: 40px;
+    display: inline-flex;
+}
+
+.logo-img{
+    width: 100px;
+    height: 100px;
+    bottom: 90px;
+    left: 30px;
+}
+
+.product-section{
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+.address-section, .price-section{
+    margin-left: 230px;
+    margin-top: 20px;
+}
+
+.details-btn{
+    margin-left: 80px;
+    margin-top: 40px;
+    width: 130px;
+    height: 60px;
+    background-color: #00BF63;
+    border-radius: 55px;
+    border-style: none;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.text-detailsbtn{
+    color: white;
+}
+
+
+
+/*-------------------------------------------------------RESPONSIVE-------------------------------------------------------*/
+
+
+@media (max-width: 1592px) {
+    .title{
+        margin-left: 200px;
+    }
+    .btn-home{
+        margin-left: 550px;
+    }
+    .img-home{
+        visibility: hidden;
+    }
+    #input-search, #city-search{
+        width: 300px;
+        left: 30px;
+    }
+    #city-search{
+        left: 100px;
+    }
+    #loupe-img{
+        left: 280px;
+    }
+    #title-search{
+        margin-left: 1px;
+    }
+    #enter-btn{
+        left: 180px;
+    }
+    #search-elements{
+        display: flex;
+        position: relative;
+        left: 10px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .title{
+        margin-left: 100px;
+    }
+    .description-home{
+        margin-left: 100px;
+    }
+    #input-search, #city-search{
+        width: 100px;
+    }
+    #loupe-img{
+        left: 260px;
+    }
+    .btn-home{
+        margin-left: 380px;
+    }
+}
+
+@media (max-width: 860px) {
+    .title{
+        font-size: 35px;
+        margin-left: 50px;
+    }
+    .description-home{
+        font-size: 17px;
+        margin-left: 70px;
+    }
+    .btn-home{
+        margin-left: 190px;
+    }
+    #title-search{
+        left: 30px;
+    }
+    #input-search, #city-search{
+        width: 100px;
+        left: 60px;
+    }
+    #city-search{
+        left: 90px;
+    }
+    #loupe-img{
+        left: 40px;
+    }
+    #loupe-img2{
+        left: 60px;
+    }
+    #enter-btn{
+        left: 130px;
+        width: 70px;
+        font-size: 11px;
+    }
+}
+@media (max-width: 860px) {
+    .title{
+        font-size: 25px;
+    }
+    .description-home{
+        font-size: 13px;
+        margin-left: 50px;
+    }
+    .btn-home{
+        width: 80px;
+        height: 30px;
+        font-size: 13px;
+        margin-left: 150px;
+    }
+    #title-search{
+        font-size: 20px;
+    }
+    #input-search, #city-search{
+        width: 60px;
+        height: 20px;
+        left: 20px;
+        top: 16px;
+    }
+    #city-search{
+        left: 33px;
+    }
+    #loupe-img, #loupe-img2{
+        width: 20px;
+        height: 20px;
+        left: 10px;
+    }
+    #enter-btn{
+        left: 40px;
+        width: 70px;
+        height: 20px;
+        font-size: 11px;
+        margin-top: 5px;
+    }
 }

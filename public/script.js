@@ -45,7 +45,6 @@ elt_srch.addEventListener("keyup", (e) => {
         i.toLowerCase().startsWith(elt_srch.value.toLowerCase()) &&
         products_elts.value != ""
       ) {
-        console.log(i);
         //create li element
         let listItem = document.createElement("li");
         //One common class name
@@ -94,28 +93,53 @@ btn_enter.addEventListener("click", function (e) {
 
 function cityNotInDb() {
     const table = document.querySelector('li');
+    if(!(city_srch.value))
+    {
+        table.innerHTML += "<li>Veuillez entrer une ville</li>";
+        return;
+    }
 
-    table.innerHTML += "<li>No Data</li>";
+
+    table.innerHTML += "<li>Liste des villes recensées: Paris, Toulon</li>";
 }
 
 function loadHTMLTable(data) {
-    const table = document.querySelector('li');
+    const table = document.querySelector('ul');
 
     if (data.length === 0) {
         table.innerHTML = "<li>No Data</li>";
         return;
     }
     let tableHtml = "";
-    data.forEach(function ({product, price_lidl, price_leclerc, price_auchan, price_franprix}) {
-        if(product == elt_srch.value)
+    data.forEach(function (item) {
+        if(item.product == elt_srch.value)
         {
-            tableHtml += `<li>${product}</li>`;
-            tableHtml += `<li>Prix lidl:${price_lidl}</li>`;
-            tableHtml += `<li>Prix leclerc:${price_leclerc}</li>`;
-            tableHtml += `<li>Prix auchan:${price_auchan}</li>`;
-            tableHtml += `<li>Prix franprix:${price_franprix}</li>`;
-            tableHtml += "</tr>";
-            // return;
+            for (var element in item){
+                if (element == "product")
+                    continue;
+                var magasin = element.substring(6)
+                const imagePath = `/assets/${magasin}-logo.png`;
+                console.log("magasin: "+ magasin)
+                tableHtml += `
+                <li>
+                    <div class="one-product">
+                        <img class="logo-img" src="${imagePath}"/>
+                        <div class="product-section">
+                            <h3>Produit:</h3>
+                            <p>${item.product}</p>
+                        </div>
+                        <div class="address-section">
+                            <h3>Adresse:</h3>
+                            <p>1 rue du lac, 75015, Paris</p>
+                        </div>
+                        <div class="price-section">
+                            <h3>Prix(€/kg):</h3>
+                            <p>${item[element]}</p>
+                        </div>
+                        <button class="details-btn"><a class="text-detailsbtn">Plus de détails</a></button>
+                    </div>
+                </li>`;
+            };
         }
     });
 
